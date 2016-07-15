@@ -1,40 +1,30 @@
-var gulp = require('gulp'),
-  nodemon = require('gulp-nodemon'),
-  plumber = require('gulp-plumber'),
-  livereload = require('gulp-livereload'),
-  sass = require('gulp-sass');
+'use strict';
 
-gulp.task('sass', function () {
-  return sass('./public/css/**/*.scss')
-    .pipe(gulp.dest('./public/css'))
-    .pipe(livereload());
+global.$ = {
+	package: require('./package.json'),
+	config: require('./gulp/config'),
+	path: {
+		task: require('./gulp/paths/tasks.js'),
+		app: require('./gulp/paths/app.js')
+	},
+	gulp: require('gulp'),
+	browserSync: require('browser-sync').create(),
+	gp: require('gulp-load-plugins')()
+};
+
+$.path.task.forEach(function(taskPath) {
+	require(taskPath)();
 });
 
-gulp.task('watch', function() {
-  gulp.watch('./public/css/*.scss', ['sass']);
-  gulp.watch('./public/js/**/*.js', ['lint']);
-});
-
-
-gulp.task('develop', function () {
-  livereload.listen();
-  nodemon({
-    script: 'app.js',
-    ext: 'js coffee jade',
-    stdout: false
-  }).on('readable', function () {
-    this.stdout.on('data', function (chunk) {
-      if(/^Express server listening on port/.test(chunk)){
-        livereload.changed(__dirname);
-      }
-    });
-    this.stdout.pipe(process.stdout);
-    this.stderr.pipe(process.stderr);
-  });
-});
-
-gulp.task('default', [
-  'sass',
-  'develop',
-  'watch'
-]);
+$.gulp.task('default', $.gulp.series(
+	'sprites_svg',
+	$.gulp.parallel(
+    'nodemon',
+		'sass',
+		'js.lint'
+		),
+	$.gulp.parallel(
+		'watch',
+		'serve'
+		)
+	));
