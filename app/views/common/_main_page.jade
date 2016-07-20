@@ -1,0 +1,81 @@
+extends ../layout/main_layout.jade
+
+block header
+	//- header.header__cover
+	//- 	.header__author-panel
+	//- 		.author__photo-container
+	//- 			.author__photo-frame
+	//- 				img.author__photo(src="/img/author.png", alt="")
+	//- 		.author__information-container
+	//- 			h1.author__name Антон Черепов
+	//- 			p.author__about Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+	//- 			+social('socials', [['soc_vk', 'https://vk.com', 'Вконтакте'], ['soc_fb', 'https://facebook.com', 'Facebook'], ['soc_twitter', 'https://twitter.com', 'twitter'], ['social_google', 'https://google.com', 'G+'], ['soc_email', '#', 'Mail']])
+	//- 		.author__controls
+	//- 			ul.control__list
+	//- 				li.control__item
+	//- 					a.control__link(href="#")
+	//- 						svg.svg__icon_controls
+	//- 							use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-edit")
+	//- 				li.control__item
+	//- 					a.control__link(href="#")
+	//- 						svg.svg__icon_controls
+	//- 							use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-off")
+	//- 	.header__search-panel
+	//- 		form.form__search(action="")
+	//- 			input.search__form(type="search" id="search_form" name="search" placeholder="Исследовать мир" )
+	//- 			label.label__search(for="search_form")
+	//- 				svg.svg__icon_search
+	//- 					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-search")
+
+	//- HEADER EDIT
+	//- include ../common/_main_page
+	
+	.modal__window_popup
+		.add__album
+			.modal__header
+				.header__title
+					h2.modal__title Добавить альбом
+				button.btn_close(value="")
+					svg.svg__icon_close
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-close")
+			.modal__form
+				form.form__add-album(action="")
+					.form__row
+						label.label(for="album_name") Название
+						input.input(type="text" name="album_name" id="album_name")
+					.form__row
+						label.label(for="album_description") Описание
+						textarea.textarea(name="album_description" id="album_description")
+					.form__row
+						.modal__preview-container
+							.modal__preview_img
+								img.modal__img(src="/img/bg_main.jpg", alt="")
+						label.btn__upload Загрузить обложку
+							input.upload(type="file" accept="image/jpeg,image/png,image/jpg" name="upload_bg")
+						.comment
+							span.span__comment (файл должен быть размером не более <span class="img__size">1024</span> КБ)
+			.modal__footer
+				button.btn_modal(type="submit" form="popup__user_edit") Сохранить
+				button.btn_cancel Отменить
+				button.btn_delete Удалить
+					svg.svg__icon_delete
+						use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-delete")
+
+
+
+
+
+
+
+
+
+block footer
+	.footer__wrapper
+		.footer__left
+			p.text__left-side Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+		.footer__center
+			a.link__up-arrow(href="#")
+				svg.svg__icon_footer
+					use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href= "/sprites/svg/symbol/bg-sprite.svg#icon-top")
+		.footer__right
+			p.text__right-side 2016 | Создано командой профессионалов на продвинутом курсепо веб-разработке от LoftSchool
