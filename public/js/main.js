@@ -1,7 +1,7 @@
 $('.login__form').addClass('load');
 $('.login__title').addClass('load-title');
 
-var Flip = (function() {
+var flip = (function() {
   function init() {
     _setUpListners();
   };
@@ -23,4 +23,28 @@ var Flip = (function() {
 
 })();
 
-Flip.init();
+flip.init();
+
+//logout
+var logout = (function() {
+
+  function init() {
+    _setUpListners();
+  };
+
+  function _setUpListners() {
+    $('#logout').on('click', _logout);
+  };
+
+  var _logout = function(e) {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
+  return {
+    init: init
+  }
+})();
+
+logout.init();
