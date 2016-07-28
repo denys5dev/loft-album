@@ -1,0 +1,40 @@
+{
+  "album" : [
+    {
+      "url" : "http://placehold.it/1350x650",
+      "comments" : 3,
+      "like" : 25,
+      "albumName" : "Прогулки по воде"
+    },
+    {
+      "url" : "http://placehold.it/380x250",
+      "comments" : 6,
+      "like" : 5,
+      "albumName" : "Поездка по воде"
+    },
+    {
+      "url" : "http://placehold.it/380x250",
+      "comments" : 79,
+      "like" : 115,
+      "albumName" : "Полет по воде"
+    },
+    {
+      "url" : "http://placehold.it/1350x650",
+      "comments" : 3,
+      "like" : 25,
+      "albumName" : "Бег по воде"
+    },
+    {
+      "url" : "http://placehold.it/380x250",
+      "comments" : 6,
+      "like" : 5,
+      "albumName" : "Марш по воде"
+    },
+    {
+      "url" : "http://placehold.it/380x250",
+      "comments" : 79,
+      "like" : 115,
+      "albumName" : "Тату по воде"
+    }
+  ]
+}

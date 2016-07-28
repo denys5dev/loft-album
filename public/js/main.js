@@ -3,7 +3,10 @@ $('.login__title').addClass('load-title');
 
 var auth = require('./modules/auth.js');
 require('./modules/test.js');
-console.log(auth);
+require('./modules/albumTamplate.js');
+console.log("here");
+
+
 // $("#auth-btn").click(function(e) {
 //   e.preventDefault();
 //   $('.login__form').removeClass('load');
