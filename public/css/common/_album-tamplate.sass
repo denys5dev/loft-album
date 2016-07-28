@@ -7,10 +7,15 @@
   justify-content: flex-start
   flex-wrap: wrap
   margin-left: -20px
+  list-style-type: none
 
 .album__item
   margin-left: 20px
   margin-bottom: 20px
+  box-shadow: 0 0 4px #e7e7e7
+
+.album__header
+  position: relative
 
 .album__image
   display: block
@@ -18,11 +23,19 @@
   height: 250px
 
 .album__content-inner
+  position: absolute
   display: inline-block
   width: 50px
   margin-right: 7%
+  bottom: 15px
 
-.photo__footer
+.album__content-comments
+  left: 50px
+
+.album__content-like
+  left: 105px
+
+.album__footer
   padding: 3% 5%
-  background: #f6f6f6
+  background: #ffffff
   text-align: right
