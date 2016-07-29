@@ -1,30 +1,11 @@
 $('.login__form').addClass('load');
 $('.login__title').addClass('load-title');
 
-var Flip = (function() {
-  function init() {
-    _setUpListners();
-  };
+var auth = require('./modules/auth.js');
+auth.init();
 
-  function _setUpListners() {
-    $('#auth-btn').on('click', _formFlip);
-    $('#signin-btn').on('click', _formFlip);
-  };
-
-  var _formFlip = function(e){
-    e.preventDefault();
-    var flip = $('.flip');
-    flip.toggleClass('flipping');
-  };
-
-  return {
-    init: init
-  };
-
-})();
-
-Flip.init();
-
+var flip = require('./modules/flip.js');
+flip.init();
 
 var editPupup = require('./modules/edit-popup.js');
 editPupup.init();
